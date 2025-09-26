@@ -1,0 +1,168 @@
+/* If using Tailwind, add this to your main CSS file */
+@import "tailwindcss";
+/* Import Tailwind's base styles, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+  Global Styles & Animations
+==========================================
+*/
+
+/* Add smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* A more fluid "fade-in-and-up" animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Keyframes for the animated gradient text */
+@keyframes background-pan {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* ==========================================
+  Component-Specific Styles
+==========================================
+*/
+
+/* Animated Gradient Text Utility */
+.animated-gradient-text {
+  @apply bg-gradient-to-r from-green-500 via-emerald-500 to-teal-400;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: background-pan 3s linear infinite;
+}
+
+/* Staggered Animation Logic */
+.stagger-in > * {
+  /* Set initial state for animation */
+  opacity: 0; 
+  /* Define the animation to be used */
+  animation: fade-in-up 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  /* Calculate delay using the --stagger-index variable from React */
+  animation-delay: calc(var(--stagger-index) * 100ms);
+}
+
+
+/* Interactive Card Hover Effects */
+.feature-card {
+  /* This class will be added to the FeatureCard component */
+  @apply transition-all duration-300 ease-in-out;
+  position: relative;
+  overflow: hidden; /* Needed for the pseudo-element */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  @apply shadow-2xl shadow-indigo-100;
+}
+
+/* Glowing border effect on hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem; /* Same as the card's rounded-lg */
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #4f46e5, #10b981) border-box;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+/* ==========================================
+  Homepage Enhancements
+==========================================
+*/
+
+/* Keyframes for a modern "blur-in" text effect */
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* We will reuse the .stagger-in class, but you can adjust it to use the new animation if you prefer */
+/* Example: .stagger-in-blur > * { animation-name: blur-in; ... } */
+
+
+/* Enhanced Call-to-Action button with a subtle glow */
+.cta-button {
+  @apply bg-green-500 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform shadow-lg flex items-center gap-2 mx-auto;
+  /* Adds a soft glow matching the button color */
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); 
+}
+
+.cta-button:hover {
+  @apply bg-green-400;
+  /* Makes the button lift and the glow more intense on hover */
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.8);
+}
+
+/* ==========================================
+  Page Transitions
+==========================================
+*/
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
