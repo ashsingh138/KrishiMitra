@@ -28,11 +28,11 @@ const SolutionTab = () => {
 
     // RESTORED: The complete list of 5 backend features
     const backendFeatures = [
-        { title: "Crop Advisory Engine", icon: "sprout", illustration: "/images/features/backend-crop.png", content: ["Analyzes soil, weather, crop rotation, and market data to give optimal advice."] },
-        { title: "Yield & Disease Engines", icon: "bar-chart-2", illustration: "/images/features/backend-ml-models.png", content: ["Uses LSTMs and CNNs to forecast yield and detect diseases from images."] },
-        { title: "Farmer Query Bot", icon: "message-square", illustration: "/images/features/backend-llm.png", content: ["A multilingual NLP bot that understands and answers farmer queries."] },
-        { title: "Spectral Intelligence Engine", icon: "satellite", illustration: "/images/features/backend-satellite.png", content: ["Fuses Sentinel-2/Landsat and IoT data to compute NDVI, NDMI, and stress maps."] },
-        { title: "Companion & Gamification Engines", icon: "award", illustration: "/images/features/backend-gamify.png", content: ["Learns from farmer logs to provide nudges and manage the reward system."] }
+        { title: "Crop Advisory Engine", icon: "sprout", illustration: "/images/soil.png", content: ["Analyzes soil, weather, crop rotation, and market data to give optimal advice."] },
+        { title: "Yield & Disease Engines", icon: "bar-chart-2", illustration: "/images/yield.jpeg", content: ["Uses LSTMs and CNNs to forecast yield and detect diseases from images."] },
+        { title: "Farmer Query Bot", icon: "message-square", illustration: "/images/chat.jpeg", content: ["A multilingual NLP bot that understands and answers farmer queries."] },
+        { title: "Spectral Intelligence Engine", icon: "satellite", illustration: "/images/band.png", content: ["Fuses Sentinel-2/Landsat and IoT data to compute NDVI, NDMI, and stress maps."] },
+        { title: "Companion & Gamification Engines", icon: "award", illustration: "/images/Gamification.png", content: ["Learns from farmer logs to provide nudges and manage the reward system."] }
     ];
 
     return (
