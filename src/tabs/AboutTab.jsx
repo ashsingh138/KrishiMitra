@@ -36,15 +36,15 @@ const AboutTab = ({ onNavigate, TABS }) => {
               <img src="/images/floods.jpg" alt="Flood impact" className="rounded-lg mb-4 w-full h-40 object-cover"/>
               <p className="text-slate-700">Heavy rain damages 273 hectares of crops  — <span className="font-bold">The Times of India</span></p>
             </a>
-            <a href="https://indianexpress.com/article/india/pests-agriculture-loss/" target="_blank" rel="noreferrer"
+            <a href="https://share.google/RQAVescoDvP6IYWrB" target="_blank" rel="noreferrer"
                className="bg-white rounded-lg p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1">
               <img src="/images/pests.jpeg" alt="Pests" className="rounded-lg mb-4 w-full h-40 object-cover"/>
-              <p className="text-slate-700">Pests destroy up to 30% of India’s crops annually — <span className="font-bold">Indian Express</span></p>
+              <p className="text-slate-700">In a warmer, wetter world, pests are multiplying faster and damaging crops severel— <span className="font-bold">DownToEarth</span></p>
             </a>
-            <a href="https://www.livemint.com/economy/agriculture-india-income" target="_blank" rel="noreferrer"
+            <a href="https://www.impriindia.com/insights/the-plight-of-small-farmers-in-india/" target="_blank" rel="noreferrer"
                className="bg-white rounded-lg p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1">
               <img src="/images/market.jpeg" alt="Market prices" className="rounded-lg mb-4 w-full h-40 object-cover"/>
-              <p className="text-slate-700">Farmers’ income disparity continues to be a major challenge — <span className="font-bold">Livemint</span></p>
+              <p className="text-slate-700">Farmers’ income disparity continues to be a major challenge — <span className="font-bold">impriindia</span></p>
             </a>
           </div>
         </section>
