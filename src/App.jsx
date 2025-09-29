@@ -22,8 +22,7 @@ const TABS = {
     RESOURCES: 'Resources & References'
 };
 
-// NEW: A component map that directly maps tab names to their components.
-// This is a cleaner alternative to a switch statement.
+
 const TAB_COMPONENTS = {
     [TABS.ABOUT]: AboutTab,
     [TABS.SOLUTION]: SolutionTab,

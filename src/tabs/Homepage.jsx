@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from '../components/Icon';
 import videoFile from "../assets/85897-591840755_small.mp4";
 import logo from "../assets/sih_logo.jpeg"; 
-import iitkgpLogo from "../assets/iitkgp_logo.png"; // add your IIT KGP logo path
+import iitkgpLogo from "../assets/iitkgp_logo.png"; 
 
 const Homepage = ({ onExplore }) => {
     return (

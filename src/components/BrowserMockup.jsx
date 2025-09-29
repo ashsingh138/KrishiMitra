@@ -10,7 +10,7 @@ const BrowserMockup = ({ children }) => {
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
         <div className="flex-grow text-center">
-            <p className="text-sm text-gray-500">dashboard.krishimitra.gov.in</p>
+            <p className="text-sm text-gray-500">KrishiAdhikari</p>
         </div>
       </div>
       <div className="p-2 md:p-4 bg-white rounded-b-lg">

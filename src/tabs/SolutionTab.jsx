@@ -5,25 +5,25 @@ import FeatureCard from '../components/solution/FeatureCard'; // Import the new 
 const SolutionTab = () => {
     // UPDATED: Data now includes 'illustration' and optional 'infographic'
      const farmerFeatures = [
-        { title: "Personalized Crop Advisory", icon: "lightbulb", illustration: "/images/features/farmer_advisory.png", content: ["Crop, fertilizer, irrigation, pest, and sowing-time recommendations.", "Profitability & sustainability score for each crop choice.", "Climate-smart practices + AgriStack / Soil Health Card integration."] },
-        { title: "Yield Prediction", icon: "bar-chart-2", illustration: "/images/features/farmer-yield.png", content: ["Forecast yield and profit margins using ML and your input data."], infographic: { value: "±5% Margin", label: "Forecast Accuracy" } },
-        { title: "Soil & Weather Intelligence", icon: "cloud-sun", illustration: "/images/features/farmer-weather.png", content: ["Real-time soil health via SoilGrids, Bhuvan, or connected IoT sensors.", "Localized weather alerts for rain, drought, and pest risk."] },
-        { title: "Pest/Disease Detection", icon: "bug", illustration: "/images/features/farmer-pest.png", content: ["Upload plant images for instant AI diagnosis.", "Receive disease hotspot warnings from satellite and officer inputs."], infographic: { value: "97% Accuracy", label: "Diagnosis Model" } },
-        { title: "Market & Blockchain Traceability", icon: "qr-code", illustration: "/images/features/farmer-market.png", content: ["Live Mandi prices from the Agmarknet API.", "Generate a QR code for produce to ensure farm-to-fork traceability."] },
-        { title: "Query Support", icon: "message-square", illustration: "/images/features/farmer-chat.png", content: ["Ask questions via text, voice, or image.", "Get answers from our AI or trusted local 'Power Farmers'.", "Unresolved cases are escalated to an officer."] },
-        { title: "Digital Companion Mode", icon: "book-marked", illustration: "/images/features/farmer-companion.png", content: ["Automatically log activities with phone sensors and simple confirmations.", "AI learns your history to give proactive advice (e.g., 'Rain expected, delay spraying')."] },
-        { title: "Gamified Sustainability", icon: "award", illustration: "/images/features/farmer-gamify.png", content: ["Complete 'missions' for sustainable practices.", "Earn badges, sustainability scores, and rank on a community leaderboard."] },
-        { title: "Spectral Crop Health Maps", icon: "satellite", illustration: "/images/features/farmer-map.png", content: ["View simple NDVI/EVI maps showing crop vigor and water stress.", "Compare field health before and after taking action."] }
+        { title: "Personalized Crop Advisory", icon: "lightbulb", illustration: "/images/features/farmer/advisory.png", content: ["Crop, fertilizer, irrigation, pest, and sowing-time recommendations.", "Profitability & sustainability score for each crop choice.", "Climate-smart practices + AgriStack / Soil Health Card integration."] },
+        { title: "Yield Prediction", icon: "bar-chart-2", illustration: "/images/features/farmer/Yield.png", content: ["Forecast yield and profit margins using ML and your input data."], infographic: { value: "±5% Margin", label: "Forecast Accuracy" } },
+        { title: "Soil & Weather Intelligence", icon: "cloud-sun", illustration:  "/images/features/farmer/Soil&Weather.png", content: ["Real-time soil health via SoilGrids, Bhuvan, or connected IoT sensors.", "Localized weather alerts for rain, drought, and pest risk."] },
+        { title: "Pest/Disease Detection", icon: "bug", illustration:"/images/features/farmer/disease.png" , content: ["Upload plant images for instant AI diagnosis.", "Receive disease hotspot warnings from satellite and officer inputs."], infographic: { value: "97% Accuracy", label: "Diagnosis Model" } },
+        { title: "Market & Blockchain Traceability", icon: "qr-code", illustration: "/images/features/farmer/Price.png", content: ["Live Mandi prices from the Agmarknet API.", "Generate a QR code for produce to ensure farm-to-fork traceability."] },
+        { title: "Query Support", icon: "message-square", illustration: "/images/features/farmer/Query.png", content: ["Ask questions via text, voice, or image.", "Get answers from our AI or trusted local 'Power Farmers'.", "Unresolved cases are escalated to an officer."] },
+        { title: "Digital Companion Mode", icon: "book-marked", illustration: "/images/features/farmer/Digital.png", content: ["Automatically log activities with phone sensors and simple confirmations.", "AI learns your history to give proactive advice (e.g., 'Rain expected, delay spraying')."] },
+        { title: "Gamified Sustainability", icon: "award", illustration: "/images/features/farmer/Sustainabilty.png", content: ["Complete 'missions' for sustainable practices.", "Earn badges, sustainability scores, and rank on a community leaderboard."] },
+        { title: "Spectral Crop Health Maps", icon: "satellite", illustration:  "/images/features/farmer/Spectral.png", content: ["View simple NDVI/EVI maps showing crop vigor and water stress.", "Compare field health before and after taking action."] }
     ];
 
     // RESTORED: The complete list of 6 officer features
     const officerFeatures = [
-        { title: "Escalated Query Resolution", icon: "inbox", illustration: "/images/features/officer-inbox.png", content: ["Manage and answer complex farmer questions sorted by urgency."] },
-        { title: "Proactive Outbreak Monitoring", icon: "siren", illustration: "/images/features/officer-outbreak.png", content: ["View heatmaps of reported diseases and pests.", "Get alerts on high-risk conditions to send mass advisories."] },
-        { title: "Regional Analytics", icon: "bar-chart-2", illustration: "/images/features/officer-analytics.png", content: ["Access aggregated soil fertility maps and district-wise weather reports."] },
-        { title: "Scheme & Policy Updates", icon: "megaphone", illustration: "/images/features/officer-schemes.png", content: ["Easily push information about subsidies, insurance, and new missions."] },
-        { title: "Blockchain Oversight", icon: "shield-check", illustration: "/images/features/officer-blockchain.png", content: ["Verify farmer-produce claims and get alerts for anomalies."] },
-        { title: "Feedback & Analytics", icon: "link", illustration: "/images/features/officer-feedback.png", content: ["Track farmer adoption rates, regional stress zones, and sustainability scores."] }
+        { title: "Escalated Query Resolution", icon: "inbox", illustration: "/images/features/officer/Query.png", content: ["Manage and answer complex farmer questions sorted by urgency."] },
+        { title: "Proactive Outbreak Monitoring", icon: "siren", illustration: "/images/features/officer/Disease.png", content: ["View heatmaps of reported diseases and pests.", "Get alerts on high-risk conditions to send mass advisories."] },
+        { title: "Regional Analytics", icon: "bar-chart-2", illustration:"/images/features/officer/Dashboard.png" , content: ["Access aggregated soil fertility maps and district-wise weather reports."] },
+        { title: "Scheme & Policy Updates", icon: "megaphone", illustration: "/images/features/officer/Scheme.png", content: ["Easily push information about subsidies, insurance, and new missions."] },
+        { title: "Blockchain Oversight", icon: "shield-check", illustration: "/images/features/officer/SupplyChain.png", content: ["Verify farmer-produce claims and get alerts for anomalies."] },
+        { title: "Feedback & Analytics", icon: "link", illustration: "/images/features/officer/Analytics.png", content: ["Track farmer adoption rates, regional stress zones, and sustainability scores."] }
     ];
 
     // RESTORED: The complete list of 5 backend features
