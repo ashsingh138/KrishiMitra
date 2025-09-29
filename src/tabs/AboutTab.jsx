@@ -31,10 +31,10 @@ const AboutTab = ({ onNavigate, TABS }) => {
         <section className="my-20">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 animated-gradient-text">Backed By Reality</h1>
           <div className="grid md:grid-cols-3 gap-8">
-            <a href="https://www.thehindu.com/news/national/farmers-crop-loss/" target="_blank" rel="noreferrer"
+            <a href="https://timesofindia.indiatimes.com/city/pune/heavy-rain-damages-273-hectares-of-crops-in-district/articleshow/124077876.cms" target="_blank" rel="noreferrer"
                className="bg-white rounded-lg p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1">
               <img src="/images/floods.jpg" alt="Flood impact" className="rounded-lg mb-4 w-full h-40 object-cover"/>
-              <p className="text-slate-700">Floods cause massive crop losses in North India — <span className="font-bold">The Hindu</span></p>
+              <p className="text-slate-700">Heavy rain damages 273 hectares of crops  — <span className="font-bold">The Times of India</span></p>
             </a>
             <a href="https://indianexpress.com/article/india/pests-agriculture-loss/" target="_blank" rel="noreferrer"
                className="bg-white rounded-lg p-6 shadow hover:shadow-lg transition transform hover:-translate-y-1">

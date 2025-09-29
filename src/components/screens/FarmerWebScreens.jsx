@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Icon from "../Icon";
-import BrowserMockup from "../BrowserMockup";
+import BrowserMockup from "../BrowserMockup1";
 
 const FarmerWebScreens = () => {
 
@@ -86,7 +86,7 @@ const FarmerWebScreens = () => {
     return (
         <section>
             <h2 className="text-4xl font-bold text-center mb-2 animated-gradient-text">
-                KisanSaathi: The Farmer's Web Portal
+                KisanSathi: The Farmer's Web Portal
             </h2>
             <p className="text-center text-slate-600 max-w-3xl mx-auto mb-12">
                 Access your farm data and community resources from any device.

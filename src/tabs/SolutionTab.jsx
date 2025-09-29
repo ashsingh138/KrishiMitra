@@ -51,7 +51,7 @@ const SolutionTab = () => {
                     <header className="mb-8">
                         <h3 className="text-3xl font-bold text-green-800 flex items-center gap-3">
                             <Icon name="smartphone" className="w-8 h-8"/>
-                            <span>KisanSaathi: The Farmer's App</span>
+                            <span>KisanSathi: The Farmer's App</span>
                         </h3>
                         <p className="text-green-700/80 mt-2">An offline-ready, intuitive mobile assistant for data-driven farming.</p>
                     </header>

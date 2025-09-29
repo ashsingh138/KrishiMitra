@@ -147,7 +147,7 @@ const FarmerMobileScreens = () => {
     return (
         <section>
             <h2 className="text-4xl font-bold text-center mb-2 animated-gradient-text">
-                KisanSaathi: The Farmer's App
+                KisanSathi: The Farmer's App
             </h2>
             <p className="text-center text-slate-600 max-w-3xl mx-auto mb-12">
                 An intuitive mobile-first experience designed for the field, with offline capabilities.
