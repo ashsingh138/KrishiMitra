@@ -2,6 +2,7 @@ import React from 'react';
 import GamificationFlowchart from '../components/solutionslogic/GamificationFlowChart';
 import CropAdvisoryFlowchart from '../components/solutionslogic/CropAdvisoryFlowChart';
 import PestDetectionFlowChart  from '../components/solutionslogic/PestDetectionFlowChart';
+import SpectralCropHealth from '../components/solutionslogic/SpectralCropHealth';
 export const implementationData = [
   {
     id: 'crop-advisory',
@@ -40,10 +41,8 @@ export const implementationData = [
     icon: 'satellite',
     description: 'Processes Sentinel-2 satellite imagery to calculate NDVI for monitoring crop health.',
     modalContent: {
-        type: 'details',
-        longDescription: 'This engine provides a macro-level view of farm health by analyzing satellite imagery. It automates the calculation of vegetation indices like NDVI, which are strong indicators of plant health, water stress, and nutrient deficiencies.',
-        workflow: ["The system periodically fetches Sentinel-2 satellite data for registered farm boundaries using the Google Earth Engine API.","It calculates the NDVI for each plot using the formula: (NIR - Red) / (NIR + Red).","The data is processed to generate a simple, color-coded health map (green for healthy, red for stressed).","Farmers can view these maps to identify problem areas that may not be visible from the ground."],
-        techStack: ['Google Earth Engine API', 'Python', 'PostGIS', 'GDAL'],
+        type: 'component',
+        component: <SpectralCropHealth />,
     }
   },
   {
