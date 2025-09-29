@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // Import our new, separated components and data
 import FeatureCard from '../components/implementation/FeatureCard';
 import Modal from '../components/implementation/Modal';
-import { implementationData } from '../data/implementationData';
+import { implementationData } from '../data/ImplementationData';
 
 const ImplementationTab = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
