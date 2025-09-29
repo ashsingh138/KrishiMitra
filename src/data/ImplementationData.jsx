@@ -3,6 +3,7 @@ import GamificationFlowchart from '../components/solutionslogic/GamificationFlow
 import CropAdvisoryFlowchart from '../components/solutionslogic/CropAdvisoryFlowChart';
 import PestDetectionFlowChart  from '../components/solutionslogic/PestDetectionFlowChart';
 import SpectralCropHealth from '../components/solutionslogic/SpectralCropHealth';
+import BlockchainTraceability from '../components/solutionslogic/BlockChainTracability';
 export const implementationData = [
   {
     id: 'crop-advisory',
@@ -51,10 +52,8 @@ export const implementationData = [
     icon: 'qr-code',
     description: 'A Solidity-based smart contract for farm-to-fork produce traceability.',
     modalContent: {
-        type: 'details',
-        longDescription: 'To build consumer trust and enable premium pricing for quality produce, this system uses blockchain to create an immutable record of a product\'s journey. Each batch of produce is tokenized, and its data is stored transparently.',
-        workflow: ["A farmer registers a harvest batch via the app, which calls a function on our Solidity smart contract.","A unique ERC-721 token (NFT) representing the batch is minted on an Ethereum-compatible blockchain (e.g., Polygon).","Key data like harvest date, location, organic certification, and processing steps are logged as transactions.","A QR code linked to the token\'s address is generated. Consumers scan it to see the product\'s full history."],
-        techStack: ['Solidity', 'Hardhat/Truffle', 'Ethers.js', 'Polygon'],
+        type: 'component',
+        component: <BlockchainTraceability />,
     }
   },
   
