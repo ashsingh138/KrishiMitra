@@ -4,6 +4,8 @@ import CropAdvisoryFlowchart from '../components/solutionslogic/CropAdvisoryFlow
 import PestDetectionFlowChart  from '../components/solutionslogic/PestDetectionFlowChart';
 import SpectralCropHealth from '../components/solutionslogic/SpectralCropHealth';
 import BlockchainTraceability from '../components/solutionslogic/BlockChainTracability';
+import MarketPriceFlowchart from '../components/solutionslogic/MarketPricePrediction';
+import YieldPredictionFlowchart from '../components/solutionslogic/YieldPredictionFlowChart';
 export const implementationData = [
   {
     id: 'crop-advisory',
@@ -46,17 +48,36 @@ export const implementationData = [
         component: <SpectralCropHealth />,
     }
   },
-  {
-    id: 'blockchain',
-    title: 'Blockchain Traceability',
-    icon: 'qr-code',
-    description: 'A Solidity-based smart contract for farm-to-fork produce traceability.',
+    {
+        id: 'blockchain',
+        title: 'Blockchain Traceability',
+        icon: 'qr-code',
+        description: 'A Solidity-based smart contract for farm-to-fork produce traceability.',
+        modalContent: {
+            type: 'component',
+            component: <BlockchainTraceability />,
+        }
+    },
+     {
+    id: 'market-price', // Give it a unique ID
+    title: 'Market Price Intelligence',
+    icon: 'trending-up', // A more fitting icon
+    description: 'A data pipeline and ML model for price forecasting and selling suggestions.',
     modalContent: {
-        type: 'component',
-        component: <BlockchainTraceability />,
+      type: 'component', // 2. UPDATE THE MODAL CONTENT
+      component: <MarketPriceFlowchart />,
     }
   },
-  
+   {
+    id: 'yield-prediction', // Add a unique ID
+    title: 'Yield Prediction Engine',
+    icon: 'bar-chart-2',
+    description: 'A hybrid ML system for forecasting crop yield and profit margins.',
+    modalContent: {
+      type: 'component', // 2. UPDATE THE MODAL CONTENT
+      component: <YieldPredictionFlowchart />,
+    }
+  },
   {
     id: 'tech-stack',
     title: 'Full Tech Stack',

@@ -9,19 +9,18 @@ import VideoTab from './tabs/VideoTab';
 import ImplementationTab from './tabs/ImplementationTab';
 import ResourcesTab from './tabs/ResourcesTab';
 import ArchitectureTab from './tabs/ArchitectureTab';
-import Footer from './components/Footer'; // Assuming you have a Footer component
+import Footer from './components/Footer';
+import { Menu, X } from 'lucide-react'; // NEW: Import icons for the hamburger menu
 
-// The TABS constants object remains the same
 const TABS = {
     ABOUT: 'About',
     SOLUTION: 'Solution',
-    ARCHITECTURE:'Sytem Architecture',
+    ARCHITECTURE:'System Architecture',
     SCREENS: 'Mobile App & Screens',
     VIDEO: 'Prototype Video',
     IMPLEMENTATION: 'Full Implementation Logic',
     RESOURCES: 'Resources & References'
 };
-
 
 const TAB_COMPONENTS = {
     [TABS.ABOUT]: AboutTab,
@@ -36,14 +35,17 @@ const TAB_COMPONENTS = {
 export default function App() {
     const [showHomepage, setShowHomepage] = useState(true);
     const [activeTab, setActiveTab] = useState(TABS.ABOUT);
+    
+    // NEW: State to manage the mobile menu's open/closed status
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // This function can be passed to child tabs to allow them to trigger navigation
+    // UPDATED: The navigation handler now also closes the mobile menu on selection.
     const handleNavigate = (tab) => {
         setActiveTab(tab);
-        window.scrollTo(0, 0); // Scroll to the top of the page on tab change
+        setIsMenuOpen(false); // Close menu after a link is clicked
+        window.scrollTo(0, 0);
     };
     
-    // The currently active component is now found by a direct lookup in our map.
     const ActiveTabComponent = TAB_COMPONENTS[activeTab] || AboutTab;
 
     if (showHomepage) {
@@ -53,15 +55,26 @@ export default function App() {
     return (
         <div className="flex flex-col min-h-screen">
             <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm">
-                <nav className="container mx-auto px-4">
-                    <ul className="flex items-center justify-center space-x-2 md:space-x-4 overflow-x-auto whitespace-nowrap">
-                        <li className="py-4 font-bold text-green-700 cursor-pointer" onClick={() => setShowHomepage(true)}>Krishi Mitra 🌱</li>
-                        
+                <nav className="container mx-auto px-4 flex justify-between items-center">
+                    {/* Logo / Home Button */}
+                    <div className="py-4 font-bold text-green-700 cursor-pointer text-lg" onClick={() => setShowHomepage(true)}>
+                        Krishi Mitra 🌱
+                    </div>
+
+                    {/* NEW: Hamburger Menu Button (Visible on mobile only) */}
+                    <div className="md:hidden">
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
+                            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                        </button>
+                    </div>
+
+                    {/* Desktop Navigation (Visible on medium screens and up) */}
+                    <ul className="hidden md:flex items-center justify-center space-x-2">
                         {Object.values(TABS).map(tab => (
                             <li key={tab}>
                                 <button 
                                     onClick={() => handleNavigate(tab)}
-                                    className={`p-4 text-sm md:text-base font-semibold border-b-4 transition-colors ${activeTab === tab ? 'border-green-500 text-green-600' : 'border-transparent text-slate-500 hover:text-green-600'}`}
+                                    className={`p-4 text-sm font-semibold border-b-4 transition-colors ${activeTab === tab ? 'border-green-500 text-green-600' : 'border-transparent text-slate-500 hover:text-green-600'}`}
                                 >
                                     {tab}
                                 </button>
@@ -69,13 +82,27 @@ export default function App() {
                         ))}
                     </ul>
                 </nav>
+
+                {/* NEW: Mobile Dropdown Menu (Conditionally rendered) */}
+                {isMenuOpen && (
+                    <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full">
+                        <ul className="flex flex-col items-center">
+                            {Object.values(TABS).map(tab => (
+                                <li key={tab} className="w-full">
+                                    <button 
+                                        onClick={() => handleNavigate(tab)}
+                                        className={`w-full p-4 text-center font-semibold transition-colors ${activeTab === tab ? 'bg-green-100 text-green-700' : 'text-slate-600 hover:bg-slate-100'}`}
+                                    >
+                                        {tab}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </header>
             
             <main className="flex-grow">
-                {/* Render the active tab component.
-                  We pass the `handleNavigate` function and the TABS object as props.
-                  This allows a button in the 'About' tab to switch to the 'Solution' tab, for example.
-                */}
                 <ActiveTabComponent onNavigate={handleNavigate} TABS={TABS} />
             </main>
 
